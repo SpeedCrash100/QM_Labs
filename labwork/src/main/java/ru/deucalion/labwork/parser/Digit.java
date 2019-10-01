@@ -36,7 +36,7 @@ public class Digit extends AbstractExpression {
 		}
 		catch(Exception e)
 		{
-			throw new IOException("Internal parser error!");
+			throw new IOException("The value before " + context.getCurrentPosition() + " tooo long for parser");
 		}
 	}
 
