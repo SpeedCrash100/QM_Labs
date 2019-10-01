@@ -7,7 +7,16 @@ import org.junit.Test;
 public class MathExpTest {
 
 	@Test
-	public void manyBrackets() {
+	public void operators()
+	{
+		String testExp = "1+2-3*4/5";
+		String result = ru.deucalion.labwork.App.parse(testExp);
+		assertTrue(result.startsWith("Valid"));
+	}
+	
+	@Test
+	public void manyBrackets() 
+	{
 		String testExp = "(((((123)))))";
 		String result = ru.deucalion.labwork.App.parse(testExp);
 		assertTrue(result.startsWith("Valid"));
