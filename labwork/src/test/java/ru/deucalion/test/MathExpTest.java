@@ -29,7 +29,7 @@ public class MathExpTest {
 		String result = ru.deucalion.labwork.App.parse(testExp);
 		assertTrue(result.startsWith("Invalid"));
 		
-		testExp = "+145";
+		testExp = "*145";
 		result = ru.deucalion.labwork.App.parse(testExp);
 		assertTrue(result.startsWith("Invalid"));
 	}
