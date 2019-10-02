@@ -1,6 +1,7 @@
 package ru.deucalion.test;
 
 import static org.junit.Assert.*;
+import ru.deucalion.labwork.App;
 
 import org.junit.Test;
 
@@ -10,27 +11,31 @@ public class MathExpTest {
 	public void operators()
 	{
 		String testExp = "1+2-3*4/5";
-		String result = ru.deucalion.labwork.App.parse(testExp);
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Valid"));
 	}
 	
 	@Test
 	public void manyBrackets() 
 	{
-		String testExp = "(((((123)))))";
-		String result = ru.deucalion.labwork.App.parse(testExp);
+		String testExp = "(((123*(7-(3*4)))))";
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Valid"));
 	}
 	
 	@Test
-	public void notEnoughOperand()
+	public void notEnoughOperandAfter()
 	{
 		String testExp = "324+";
-		String result = ru.deucalion.labwork.App.parse(testExp);
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Invalid"));
-		
-		testExp = "*145";
-		result = ru.deucalion.labwork.App.parse(testExp);
+	}
+	
+	@Test
+	public void notEnoughOperandBefore()
+	{
+		String testExp = "*145";
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Invalid"));
 	}
 	
@@ -38,7 +43,7 @@ public class MathExpTest {
 	public void negativeValue()
 	{
 		String testExp = "-----145";
-		String result = ru.deucalion.labwork.App.parse(testExp);
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Valid"));
 	}
 	
@@ -46,7 +51,7 @@ public class MathExpTest {
 	public void notEnoughBracket()
 	{
 		String testExp = "(-145";
-		String result = ru.deucalion.labwork.App.parse(testExp);
+		String result = App.parse(testExp);
 		assertTrue(result.startsWith("Invalid"));
 	}
 
