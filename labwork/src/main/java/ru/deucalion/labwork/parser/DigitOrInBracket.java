@@ -15,10 +15,15 @@ public class DigitOrInBracket extends AbstractExpression {
 			MathExpression exp = new MathExpression();
 			exp.parse(context);
 			
+			if(context.atLastChar())
+			{
+				throw new IOException("Expected ')' after " + context.getCurrentPosition() + " but got EOW");
+			}
+			
 			char next = context.read();
 			if(next != ')')
 			{
-				throw new IOException("Expected ')' in " + context.getCurrentPosition() + " but got '" + next + "'");
+				throw new IOException("Expected ')' at " + context.getCurrentPosition() + " but got '" + next + "'");
 			}
 			
 		}

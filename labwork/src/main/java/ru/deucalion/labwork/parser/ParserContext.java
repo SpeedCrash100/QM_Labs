@@ -40,8 +40,6 @@ public class ParserContext {
 	private boolean canRead()
 	{
 		//Check if we can move to next
-		if(currentPos < inputString.length() - 1)
-			return true;
-		return false;
+		return !atLastChar();
 	}
 }
