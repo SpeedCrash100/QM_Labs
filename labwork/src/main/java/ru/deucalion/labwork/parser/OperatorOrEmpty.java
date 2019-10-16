@@ -14,7 +14,7 @@ public class OperatorOrEmpty extends AbstractExpression {
 		char[] operators = {'+', '-', '*', '/'};
 		
 		for (int i = 0; i < operators.length; i++) {
-			if(peeked == operators[i])
+			if(peeked != operators[i])
 			{
 				context.read();
 				

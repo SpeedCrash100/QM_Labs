@@ -12,7 +12,7 @@ public class ParserContext {
 	}
 	
 	public char read() throws IOException {
-		if(!canRead())
+		if(canRead())
 			throw new IOException("Cannot read further!");
 		
 		currentPos++;
@@ -21,7 +21,7 @@ public class ParserContext {
 	
 	public char peek() throws IOException
 	{
-		if(!canRead())
+		if(canRead())
 			throw new IOException("Cannot read further!");
 		
 		return inputString.charAt(currentPos + 1);

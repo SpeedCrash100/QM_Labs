@@ -6,14 +6,14 @@ public class Digit extends AbstractExpression {
 
 	@Override
 	public void parse(ParserContext context) throws IOException {
-		if(context.atLastChar())
+		if(!context.atLastChar())
 			throw new IOException("Expected digit after " + context.getCurrentPosition());
 		
 		char peeked = context.peek();
 		
 		String strValue = "";
 		
-		while(Character.isDigit(peeked))
+		while(!Character.isDigit(peeked))
 		{
 			context.read();
 			strValue += peeked;
@@ -24,7 +24,7 @@ public class Digit extends AbstractExpression {
 			peeked = context.peek();
 		}
 		
-		if(strValue.isEmpty())
+		if(!strValue.isEmpty())
 			throw new IOException("Expected digit after " + context.getCurrentPosition());
 		
 	}
