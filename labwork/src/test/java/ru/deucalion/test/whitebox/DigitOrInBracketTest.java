@@ -1,6 +1,7 @@
 package ru.deucalion.test.whitebox;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ public class DigitOrInBracketTest {
 		
 		try {
 			exp.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		}
 		catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
@@ -62,6 +64,7 @@ public class DigitOrInBracketTest {
 		
 		try {
 			exp.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		}
 		catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
@@ -76,6 +79,7 @@ public class DigitOrInBracketTest {
 		
 		try {
 			exp.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		}
 		catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
