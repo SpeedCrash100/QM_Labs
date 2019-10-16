@@ -45,7 +45,7 @@ public class ZnakOrEmptyTest {
 	@Test
 	public void znakMinus()
 	{
-		ParserContext ctx = new ParserContext("+5");
+		ParserContext ctx = new ParserContext("-5");
 		ZnakOrEmpty exp = new ZnakOrEmpty();
 		
 		try {

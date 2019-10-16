@@ -1,6 +1,7 @@
 package ru.deucalion.test.whitebox;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -34,9 +35,9 @@ public class DigitTest {
 	}
 	
 	@Test
-	public void noDigitsInEOW()
+	public void noDigitsInEnd()
 	{
-		ParserContext ctx = new ParserContext(")");
+		ParserContext ctx = new ParserContext("+");
 		
 		try {
 			ctx.read(); //Move to 0
@@ -62,19 +63,21 @@ public class DigitTest {
 		
 		try {
 			digit.parse(ctx);
+			assertEquals(0, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
 	}
 	
 	@Test
-	public void digitInEOW()
+	public void digitInEnd()
 	{
 		ParserContext ctx = new ParserContext("9");
 		Digit digit = new Digit();
 		
 		try {
 			digit.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}

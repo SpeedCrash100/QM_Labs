@@ -1,5 +1,7 @@
 package ru.deucalion.test.whitebox;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class OperatorOrEmptyTest {
 		
 		try {
 			exp.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
@@ -38,7 +41,9 @@ public class OperatorOrEmptyTest {
 		OperatorOrEmpty exp = new OperatorOrEmpty();
 		
 		try {
+			int oldPos = ctx.getCurrentPosition();
 			exp.parse(ctx);
+			assertEquals(oldPos, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
@@ -51,7 +56,9 @@ public class OperatorOrEmptyTest {
 		OperatorOrEmpty exp = new OperatorOrEmpty();
 		
 		try {
+			int oldPos = ctx.getCurrentPosition();
 			exp.parse(ctx);
+			assertEquals(oldPos + 2, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
@@ -64,7 +71,9 @@ public class OperatorOrEmptyTest {
 		OperatorOrEmpty exp = new OperatorOrEmpty();
 		
 		try {
+			int oldPos = ctx.getCurrentPosition();
 			exp.parse(ctx);
+			assertEquals(oldPos + 2, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
@@ -77,7 +86,9 @@ public class OperatorOrEmptyTest {
 		OperatorOrEmpty exp = new OperatorOrEmpty();
 		
 		try {
+			int oldPos = ctx.getCurrentPosition();
 			exp.parse(ctx);
+			assertEquals(oldPos + 2, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
@@ -90,7 +101,9 @@ public class OperatorOrEmptyTest {
 		OperatorOrEmpty exp = new OperatorOrEmpty();
 		
 		try {
+			int oldPos = ctx.getCurrentPosition();
 			exp.parse(ctx);
+			assertEquals(oldPos + 2, ctx.getCurrentPosition());
 		} catch (IOException e) {
 			fail("Exception has thrown : " + e.getMessage());
 		}
