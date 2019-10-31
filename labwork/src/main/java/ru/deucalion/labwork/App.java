@@ -19,4 +19,10 @@ public class App
         	return "Invalid expression: " + e.getMessage();
 		}
 	}
+	
+	public static void main(String[] args)
+	{
+		MainWindow wnd = new MainWindow();
+		wnd.setVisible(true);
+	}
 }
