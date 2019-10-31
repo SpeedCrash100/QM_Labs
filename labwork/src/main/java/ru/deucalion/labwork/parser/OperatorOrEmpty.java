@@ -23,6 +23,9 @@ public class OperatorOrEmpty extends AbstractExpression {
 				return;
 			}
 		}
+		
+		throw new IOException("Expected operator at " + context.getCurrentPosition() + " but got " + peeked);
+		
 	}
 
 }
