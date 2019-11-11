@@ -1,8 +1,16 @@
 package ru.deucalion.labwork;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
 import ru.deucalion.labwork.parser.MathExpression;
 import ru.deucalion.labwork.parser.ParserContext;
 
+@ComponentScan
+@EnableAutoConfiguration
+@EnableWebSecurity
 public class App 
 {
 	public static String parse(String mathStr)
@@ -22,7 +30,7 @@ public class App
 	
 	public static void main(String[] args)
 	{
-		MainWindow wnd = new MainWindow();
-		wnd.setVisible(true);
+		SpringApplication.run(App.class, args);
 	}
 }
+

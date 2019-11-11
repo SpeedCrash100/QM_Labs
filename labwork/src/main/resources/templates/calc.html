@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/external/angular.min.js"></script>
+    <script src="js/calc.js"></script>
+</head>
+
+<body ng-app="calc" ng-controller="calcController">
+
+<table>
+    <h1>MathExpression parser</h1>
+    <tr>
+        <td>Input: </td>
+        <td><input type="text" ng-model="inputtext" ng-change="onInputChanged()"></td>
+    </tr>
+    <tr>
+        <td><button ng-disabled="calcBtnDisabled" ng-click="onCalcClicked()">Calc</button></td>
+        <td><button ng-disabled="cancelBtnDisabled" ng-click="onCancelClicked()">Cancel</button></td>
+    </tr>
+    <tr>
+        <td>Output: </td>
+        <td> <input type="text" ng-model="outputtext" disabled=true> </td>
+    </tr>
+</table>
+
+</body>
+
+</html>
