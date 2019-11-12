@@ -12,15 +12,15 @@
     <h1>MathExpression parser</h1>
     <tr>
         <td>Input: </td>
-        <td><input type="text" ng-model="inputtext" ng-change="onInputChanged()"></td>
+        <td><input id="textInput" type="text" ng-model="inputtext" ng-change="onInputChanged()"></td>
     </tr>
     <tr>
-        <td><button ng-disabled="calcBtnDisabled" ng-click="onCalcClicked()">Calc</button></td>
-        <td><button ng-disabled="cancelBtnDisabled" ng-click="onCancelClicked()">Cancel</button></td>
+        <td><button id="calcBtn" ng-disabled="calcBtnDisabled" ng-click="onCalcClicked()">Calc</button></td>
+        <td><button id="cancelBtn" ng-disabled="cancelBtnDisabled" ng-click="onCancelClicked()">Cancel</button></td>
     </tr>
     <tr>
         <td>Output: </td>
-        <td> <input type="text" ng-model="outputtext" disabled=true> </td>
+        <td> <input id="textOutput" type="text" ng-model="outputtext" disabled=true> </td>
     </tr>
 </table>
 
