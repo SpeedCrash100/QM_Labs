@@ -22,7 +22,13 @@ public class App
 	
 	public static void main(String[] args)
 	{
-		MainWindow wnd = new MainWindow();
-		wnd.setVisible(true);
+		String testexpression = "5+(4*-3/4)";
+		
+		int counts = 100000;
+		for (int i = 0; i < counts; i++)
+		{
+			System.out.println(i);
+			parse(testexpression);
+		}
 	}
 }
