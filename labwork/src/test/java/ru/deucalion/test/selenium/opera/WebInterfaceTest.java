@@ -1,4 +1,4 @@
-package ru.deucalion.test.selenium;
+package ru.deucalion.test.selenium.opera;
 
 
 import java.io.File;
