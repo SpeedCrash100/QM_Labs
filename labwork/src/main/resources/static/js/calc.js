@@ -69,7 +69,7 @@ app.controller("calcController", function($scope, $http){
         var respond = $http(
             {
                 url: "/rest/calc",
-                method: "PUT",
+                method: "POST",
                 params: dataToRest
             }
         );
@@ -96,7 +96,7 @@ app.controller("calcController", function($scope, $http){
         var respond = $http(
             {
                 url: "/rest/cancel",
-                method: "PUT"
+                method: "POST"
             }
         );
 

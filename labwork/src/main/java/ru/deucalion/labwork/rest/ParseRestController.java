@@ -21,7 +21,7 @@ public class ParseRestController {
 		oldCommands = new Stack<MathExpCommand>();
 	}
 
-	@RequestMapping(value = "/calc", method = RequestMethod.PUT)
+	@RequestMapping(value = "/calc", method = RequestMethod.POST)
 	public ResponseEntity<Object> parse(@RequestParam(name = "expr", required = true) String inExpr){
 
 		MathExpCommand cmd = new MathExpCommand(inExpr);
@@ -32,7 +32,7 @@ public class ParseRestController {
 		return new ResponseEntity<Object>(cmd, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/cancel", method = RequestMethod.PUT)
+	@RequestMapping(value = "/cancel", method = RequestMethod.POST)
 	public ResponseEntity<Object> cancel(){
 		if(oldCommands.empty())
 		{
