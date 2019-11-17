@@ -2,6 +2,10 @@ package ru.deucalion.test.selenium.firefox;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,10 +14,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Objects;
+
+import ru.deucalion.labwork.App;
 
 
 /**
@@ -33,14 +42,21 @@ public class WebInterfaceTest {
 	WebElement calcBtn;
 	
 	@Before
-	public void setUp()
+	public void setUp() throws FileNotFoundException, IOException
 	{
-		String driverexec = "/home/deucalion/Apps/WebDrivers/firefox/geckodriver";
-		//String browserexec = "C:\\Users\\Deucalion\\AppData\\Local\\Programs\\Opera\\64.0.3417.92\\opera.exe";
+		Properties driverProps = new Properties();
+		InputStream inputCfg = App.class.getClassLoader().getResourceAsStream("driverexec.properties");
+		driverProps.load(inputCfg);
+		
+		
+		String driverexec = driverProps.getProperty("driverexec");
+		String browserexec = driverProps.getProperty("browserexec");
 	
 		GeckoDriverService serv = new GeckoDriverService.Builder().usingDriverExecutable(new File(driverexec)).build();
+		FirefoxOptions opts = new FirefoxOptions();
+		opts.setBinary(browserexec);
 		
-		driver = new FirefoxDriver(serv);
+		driver = new FirefoxDriver(serv, opts);
 		prefix = "http://localhost:8080/";
 		timeout = 5;
 		
@@ -57,8 +73,11 @@ public class WebInterfaceTest {
 	@After
 	public void tearDown()
 	{
-		driver.close();
-		driver = null;
+		if(!Objects.equal(driver, null))
+		{
+			driver.close();
+			driver = null;
+		}
 	}
 	
 	public ExpectedCondition<Boolean> isPageAtBegin()
