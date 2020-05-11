@@ -42,4 +42,16 @@ public class ParserContext {
 		//Check if we can move to next
 		return !atLastChar();
 	}
+	
+	public void setCalculationContext(CalcContext ctx)
+	{
+		//TODO! Create field for CalcContext and assign ctx
+		return;
+	}
+	
+	public CalcContext getCalculationContext()
+	{
+		//TODO! Create field for CalcContext
+		return null;
+	}
 }
