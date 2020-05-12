@@ -18,6 +18,9 @@ public class OperatorsDescriptionTest {
 		OperatorDescription desc = new PlusOperatorDescription();
 		assertEquals('+', desc.getSymbolic());
 		assertEquals(2, desc.getPriority());
+		
+		float answer = desc.execute(3, 5);
+		assertEquals(8, answer, 0.0001);
 	}
 	
 	@Test
@@ -26,6 +29,9 @@ public class OperatorsDescriptionTest {
 		OperatorDescription desc = new MinusOperatorDescription();
 		assertEquals('-', desc.getSymbolic());
 		assertEquals(2, desc.getPriority());
+		
+		float answer = desc.execute(3, 5);
+		assertEquals(-2, answer, 0.0001);
 	}
 	
 	@Test
@@ -34,6 +40,9 @@ public class OperatorsDescriptionTest {
 		OperatorDescription desc = new MultiplyOperatorDescription();
 		assertEquals('*', desc.getSymbolic());
 		assertEquals(1, desc.getPriority());
+		
+		float answer = desc.execute(3, 5);
+		assertEquals(15, answer, 0.0001);
 	}
 	
 	@Test
@@ -42,6 +51,9 @@ public class OperatorsDescriptionTest {
 		OperatorDescription desc = new DivideOperatorDescription();
 		assertEquals('/', desc.getSymbolic());
 		assertEquals(1, desc.getPriority());
+		
+		float answer = desc.execute(3, 5);
+		assertEquals(0.6, answer, 0.0001);
 	}
 
 }
