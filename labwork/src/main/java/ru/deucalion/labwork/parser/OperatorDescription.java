@@ -1,6 +1,6 @@
 package ru.deucalion.labwork.parser;
 
-public class OperatorDescription {
+public abstract class OperatorDescription {
 	public char getSymbolic() {
 		return '\0';
 	}
@@ -8,5 +8,7 @@ public class OperatorDescription {
 	public int getPriority() {
 		return 0;
 	}
+	
+	public abstract float execute(float left, float right);
 	
 }
