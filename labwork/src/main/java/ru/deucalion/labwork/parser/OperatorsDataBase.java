@@ -6,12 +6,12 @@ public class OperatorsDataBase {
 		return false;
 	}
 	
-	public OperatorDescription getOperator()
+	public OperatorDescription getOperator(char symbol)
 	{
 		return null;
 	}
 	
-	public String[] getOperatorsLists()
+	public char[] getOperatorsLists()
 	{
 		return null;
 	}
