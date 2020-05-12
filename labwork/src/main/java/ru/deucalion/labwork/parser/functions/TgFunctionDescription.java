@@ -7,7 +7,7 @@ import ru.deucalion.labwork.parser.FunctionDescription;
 public class TgFunctionDescription extends FunctionDescription {
 
 	@Override
-	public float execute(List<Float> arguments) {
+	public float execute(List<Float> arguments) throws IllegalArgumentException {
 		return 0;
 	}
 

@@ -8,6 +8,6 @@ public abstract class FunctionDescription {
 		return "";
 	}
 	
-	public abstract float execute(List<Float> arguments);
+	public abstract float execute(List<Float> arguments) throws IllegalArgumentException;
 	
 }
