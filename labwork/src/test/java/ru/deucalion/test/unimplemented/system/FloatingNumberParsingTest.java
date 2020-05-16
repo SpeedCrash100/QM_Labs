@@ -28,6 +28,7 @@ public class FloatingNumberParsingTest {
 		
 		try {
 			expr.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		} catch (IOException e) {
 			fail("Parser must reads float number without exception");
 			e.printStackTrace();
@@ -41,6 +42,7 @@ public class FloatingNumberParsingTest {
 		
 		try {
 			expr.parse(ctx);
+			assertTrue(ctx.atLastChar());
 		} catch (IOException e) {
 			fail("Parser must reads float number without exception");
 			e.printStackTrace();
