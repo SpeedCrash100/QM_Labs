@@ -1,4 +1,4 @@
-package ru.deucalion.test.unimplemented.functions;
+package ru.deucalion.test.unimplemented.unit.functions;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;

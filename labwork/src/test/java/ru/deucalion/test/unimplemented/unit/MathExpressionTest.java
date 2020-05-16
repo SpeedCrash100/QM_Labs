@@ -1,4 +1,4 @@
-package ru.deucalion.test.unimplemented;
+package ru.deucalion.test.unimplemented.unit;
 
 import static org.junit.Assert.assertTrue;
 

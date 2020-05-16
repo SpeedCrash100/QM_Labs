@@ -1,4 +1,4 @@
-package ru.deucalion.test.unimplemented.functions;
+package ru.deucalion.test.unimplemented.unit.functions;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -9,28 +9,28 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ru.deucalion.labwork.parser.FunctionDescription;
-import ru.deucalion.labwork.parser.functions.TgFunctionDescription;
+import ru.deucalion.labwork.parser.functions.CosFunctionDescription;
 
-public class TgFunctionDescriptionTest {
+public class CosFunctionDescriptionTest {
 	FunctionDescription desc;
 	
 	@Before
 	public void setup()
 	{
-		desc = new TgFunctionDescription();
+		desc = new CosFunctionDescription();
 	}
 	
 	@Test
 	public void calculation()
 	{
-		assertEquals("tg", desc.getName());
+		assertEquals("cos", desc.getName());
 		
 		LinkedList<Float> args = new LinkedList<Float>();
 		args.add(1.0f);
 		
 		try {
 			float answer = desc.execute(args);
-			assertEquals(1.5574, answer, 0.00001);
+			assertEquals(0.5403023, answer, 0.00001);
 		} catch (Exception ex)
 		{
 			fail("Exception has thrown: " + ex.getMessage());
