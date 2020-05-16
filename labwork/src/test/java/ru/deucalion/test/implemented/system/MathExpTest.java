@@ -1,4 +1,4 @@
-package ru.deucalion.test.blackbox;
+package ru.deucalion.test.implemented.system;
 
 import static org.junit.Assert.*;
 import ru.deucalion.labwork.App;

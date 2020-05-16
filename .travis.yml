@@ -8,4 +8,4 @@ jdk:
 
 script:
   - cd labwork
-  - ./mvnw '-Dtest=ru.deucalion.test.whitebox.**' test
+  - ./mvnw '-Dtest=ru.deucalion.test.implemented.**' test

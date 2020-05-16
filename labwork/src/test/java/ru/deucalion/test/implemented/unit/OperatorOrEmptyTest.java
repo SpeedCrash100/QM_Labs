@@ -1,4 +1,4 @@
-package ru.deucalion.test.whitebox;
+package ru.deucalion.test.implemented.unit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
