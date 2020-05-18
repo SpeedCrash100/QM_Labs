@@ -27,18 +27,18 @@ jobs:
           ./mvnw '-Dtest=ru.deucalion.test.implemented.**' package | tee build.log
           
       - name: Upload Build Log
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: build_logs
           path: labwork/build.log
           
       - name: Upload jar executable
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: jar_file
           path: labwork/target/*.jar
       - name: Upload coverage test
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: cover
           path: labwork/target/site/jacoco/
