@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+       
+      - uses: actions/checkout@v2
+        
+      - name: Build and run tests
+        run: |
+          cd labwork
+          ./mvnw '-Dtest=ru.deucalion.test.implemented.**' package>build.log
+          
+      - name: Upload Build Log
+        uses: actions/upload-artifact@v1
+        with:
+          name: build_logs
+          path: labwork/build.log
+
+
