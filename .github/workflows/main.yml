@@ -24,14 +24,8 @@ jobs:
       - name: Build and run tests
         run: |
           cd labwork
-          ./mvnw '-Dtest=ru.deucalion.test.implemented.**' package | tee build.log
-          
-      - name: Upload Build Log
-        uses: actions/upload-artifact@v2
-        with:
-          name: build_logs
-          path: labwork/build.log
-          
+          ./mvnw '-Dtest=ru.deucalion.test.implemented.**' package
+
       - name: Upload jar executable
         uses: actions/upload-artifact@v2
         with:
