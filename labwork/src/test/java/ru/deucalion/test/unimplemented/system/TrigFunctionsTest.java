@@ -76,5 +76,17 @@ public class TrigFunctionsTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void function_noClose()
+	{
+		ParserContext ctx = new ParserContext("ctg(1");
+		
+		try {
+			expr.parse(ctx);
+			fail("Expected Exception here");
+		} catch (IOException e) {
+		}
+	}
 
 }
